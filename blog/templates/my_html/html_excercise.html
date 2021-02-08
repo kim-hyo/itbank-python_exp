@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            function checkform(id,pass) {                
+                if (id.value=="1" && pass.value=="1") {
+                    window.open().location.href="https://naver.com";
+                }
+            }
+        </script>
+        <form onclick="checkform(id,pass)">
+            <input type="text" placeholder="login" name="id"><br>
+            <input type="password" name="pass"><br>
+            <input type="submit" value="ok">
+            <input type="reset" value="init">
+        </form>
+    </body>
+</html>
