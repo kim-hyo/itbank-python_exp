@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            function checkform(id,pass) {                
+                if (id.value=="1" && pass.value=="1") {
+                    window.open().location.href="http://127.0.0.1:8000/login/";
+                }
+            }
+        </script>
+        <form onclick="checkform(id,pass)">
+            <input type="text" placeholder="login" name="id"><br>
+            <input type="password" name="pass"><br>
+            <input type="submit" value="ok">
+            <input type="reset" value="init">
+        </form>
+        <p>
+            {{ki}} <br>
+            <br>
+            {% for value in list1 %}
+                {{value}}<br>
+            {% endfor %}
+            <br>
+            {% for value in dict1 %}
+                {{value}}<br>
+            {% endfor %}
+            <br>
+            {% for key,value in dict1.items %}
+                {{key}}: {{value}}<br>
+            {% endfor %}
+        </p>
+    </body>
+</html>

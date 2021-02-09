@@ -1,4 +1,4 @@
-"""blog URL Configuration
+"""tags URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -15,14 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
-from blog import views
+from tags import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),    
-    re_path(r'^blog/([0-9]{4})/([0-9]{2})', views.blog_con),
-    re_path(r'^blogname/[a-zA-Z]+/$', views.blogname),
-    re_path(r'^info/', views.info),
-    re_path(r'^board/', views.board),
-    re_path(r'^blogname/', views.blognames),
+    path('admin/', admin.site.urls),
     re_path(r'^test/', views.test_html),
+    re_path(r'^login/', views.login),
+    re_path(r'^tempcode/', views.tempcode),
 ]

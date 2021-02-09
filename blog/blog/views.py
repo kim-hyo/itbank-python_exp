@@ -16,3 +16,6 @@ def blognames(request):
 
 def board(request):    
     return render(request, 'my_html/board.html')
+
+def test_html(request):
+    return render(request, 'my_html/html_excercise.html')
