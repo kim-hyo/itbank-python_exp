@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        rank country points win draw lose g/d l/d g-l <br>
+        {% for country in group.keys %}
+        {{ forloop.counter}} {{country}} 
+            {% for key,num in group.items %}            
+                {{num.0}} <br>
+            {% endfor %}
+        {% endfor%}
+    </body>
+</html>

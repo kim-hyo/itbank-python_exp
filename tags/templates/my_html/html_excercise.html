@@ -28,6 +28,17 @@
             {% for key,value in dict1.items %}
                 {{key}}: {{value}}<br>
             {% endfor %}
+
+            num_1: {{num_1}}<br>
+            num_2: {{num_2}}<br>
+
+            {% if num_1 < num_2 %}
+                {{num_1}} is smaller than {{num_2}}
+            {% elif num_1 == num_2 %}
+                {{num_1}} is same with {{num_2}}
+            {% else %}
+                {{num_1}} is bigger than {{num_2}}
+            {% endif %}
         </p>
     </body>
 </html>

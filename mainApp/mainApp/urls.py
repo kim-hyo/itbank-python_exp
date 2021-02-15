@@ -1,4 +1,4 @@
-"""tags URL Configuration
+"""mainApp URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -14,13 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, re_path
-from tags import views
+from django.urls import path, re_path, include
+
+from mainApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^test/', views.test_html),
-    re_path(r'^login/', views.login),
-    re_path(r'^tempcode/', views.tempcode),
-    re_path(r'^worldcup/', views.worldcup),
+    path(r'test/', views.test_html),
+    path(r'phonebook/', include('phonebook.urls')),
 ]
+
