@@ -18,9 +18,12 @@ from django.urls import path, re_path
 
 from phonebook import views
 
+app_name = 'PB'
+
 urlpatterns = [
-    path(r'', views.pbook),
+    path(r'', views.pbook, name='pb'),
     path(r'test/', views.test),
     path(r'testint/<int:ids>', views.testint),
+    path(r'detail/<int:userid>', views.details, name='detail'),
 ]
 
