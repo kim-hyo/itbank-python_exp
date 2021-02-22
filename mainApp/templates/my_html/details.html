@@ -3,6 +3,7 @@
     <body>
         detail page<br>
         {{pbook.id}}, {{pbook.name}}, {{pbook.pnum}}, {{pbook.addr}}, {{pbook.birth | date:'Y-m-d'}} <br>
-        <a href="{% url 'PB:pb' %}">to phonebook home</a>
+        <!-- <li><a href="{% url 'PB:pb' %}"><button type="button">to phonebook home</button></a></li> -->
+        <li><button type="button" onclick="location.href='{% url 'PB:pb' %}'">to phonebook home</button></li>
     </body>
 </html>

@@ -25,5 +25,6 @@ urlpatterns = [
     path(r'test/', views.test),
     path(r'testint/<int:ids>', views.testint),
     path(r'detail/<int:userid>', views.details, name='detail'),
+    path(r'add/', views.add, name='add'),
 ]
 

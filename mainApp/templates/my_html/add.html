@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        add page<br><br>
+
+    <form method="POST"> {% csrf_token %}
+        NAME: <input type="text" name="name"><br>
+        Phone Number: <input type="text" name="pnum"><br>
+        E-mail: <input type="email" name="email"><br>
+        Address: <input type="text" name="addr"><br>
+        Birthday: <input type="date" name="bir"><br>
+        <button type="submit">Confirm</button>
+    </form>
+    </body>
+</html>

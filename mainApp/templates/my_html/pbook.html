@@ -4,5 +4,6 @@
         {% for gap in pbook %}
            {{gap.id}} <a href="{% url 'PB:detail' gap.id %}">{{gap.name}} </a><br>
         {% endfor %}
+        <button type="button" onclick="location.href='{% url 'PB:add' %}'">ADD</button>
     </body>
 </html>

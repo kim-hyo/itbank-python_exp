@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html>
     <body>
-        now phonebook testing...
+        now phonebook testing...<br><br><br>
+
+    <form>
+        GET <br>
+        ID: <input type="text" name="userID"><br>
+        PW: <input type="password" name="userPW"><br>
+        <input type="submit" value="send">
+    </form>
+    <br><br>
+    <form method=POST> {% csrf_token %}
+        POST<br>
+        ID: <input type="text" name="userID"><br>
+        PW: <input type="password" name="userPW"><br>
+        <input type="submit" value="send">
+    </form>
     </body>
 </html>
