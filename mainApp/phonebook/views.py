@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from phonebook.models import phonebooks
+import os
 
 # Create your views here.
 def test(request):
@@ -27,12 +28,6 @@ def details(request, userid):
 
 def add(request):
     if request.method == 'POST':
-        # print("POST method")
-        # print(f"Name: {request.POST.get('name')}")
-        # print(f"Phone Number: {request.POST.get('pnum')}")
-        # print(f"E-mail: {request.POST.get('email')}")
-        # print(f"Address: {request.POST.get('addr')}")
-        # print(f"Birthday: {request.POST.get('bir')}")
 
         table = phonebooks()
         table.name = request.POST.get('name')
@@ -45,3 +40,24 @@ def add(request):
     else:
         print(f"GET method: {request.method}")
         return render(request, 'my_html/add.html')
+    
+
+def modify(request, userid):
+    table = phonebooks.objects.get(id=userid)
+    context = {'pbook': table}
+    
+    if request.method == 'POST':        
+        table.name = request.POST.get('name')
+        table.pnum = request.POST.get('pnum')
+        table.email = request.POST.get('email')
+        table.addr = request.POST.get('addr')
+        table.birth = request.POST.get('bir')
+        table.save()
+        return redirect('PB:pb')
+    else:        
+        return render(request, 'my_html/mod.html', context)
+
+def delete(request, userid):
+    table = phonebooks.objects.get(id=userid)
+    table.delete()
+    return redirect('PB:pb')

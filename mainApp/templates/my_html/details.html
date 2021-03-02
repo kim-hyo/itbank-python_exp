@@ -5,5 +5,7 @@
         {{pbook.id}}, {{pbook.name}}, {{pbook.pnum}}, {{pbook.addr}}, {{pbook.birth | date:'Y-m-d'}} <br>
         <!-- <li><a href="{% url 'PB:pb' %}"><button type="button">to phonebook home</button></a></li> -->
         <li><button type="button" onclick="location.href='{% url 'PB:pb' %}'">to phonebook home</button></li>
+        <li><button type="button" onclick="location.href='{% url 'PB:mod' pbook.id %}'">modify</button></li>
+        <li><button type="button" onclick="location.href='{% url 'PB:del' pbook.id %}'">delete</button></li>
     </body>
 </html>

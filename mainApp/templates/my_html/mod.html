@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        modify page <br><br>        
+
+        <form method="POST"> {% csrf_token %}
+            NAME: <input type="text" name="name" placeholder="{{pbook.name}}"><br>
+            Phone Number: <input type="text" name="pnum" placeholder="{{pbook.pnum}}"><br>
+            E-mail: <input type="email" name="email" placeholder="{{pbook.email}}"><br>
+            Address: <input type="text" name="addr" placeholder="{{pbook.addr}}"><br>
+            Birthday: <input type="date" name="bir" value="{{pbook.birth | date:'Y-m-d'}}"><br>
+            <button type="submit">Modify</button>
+        </form>
+    </body>
+</html>
